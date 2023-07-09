@@ -14,9 +14,9 @@ for s = 1:numel(structures)
 
     % Create a subfolder for each odor name
     for i = 1:numel(structure.OdorList)
-        cid = PCidnums_maporder(i); % Get the CID
-        odorName = num2str(cid); % Convert CID to string
-        
+
+        odorName = structure.OdorList{i};
+
         subfolderPath = fullfile(folderPath, odorName); % Modified subfolder path
         if ~exist(subfolderPath, 'dir')
             mkdir(subfolderPath);
